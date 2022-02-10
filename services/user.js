@@ -52,3 +52,10 @@ export const getUsers = async () => {
   const users = res.data
   return users
 }
+
+export const getUser = async (name) => {
+  const res = await axios.get(`${URL}/${name}`)
+  console.log(res);
+  const user = res.data
+  return user
+}
