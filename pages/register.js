@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Navigation from '../components/Navigation'
 import { useUser } from '../hooks/useUser'
 import { Form, Input, Button } from '../styles/Register'
 import { withTransition } from '../transitionPage'
@@ -31,6 +32,7 @@ function Register () {
 
     return(
         <>  
+            <Navigation />
             <Form onSubmit={handleSubmit}>
                 <h1>Register</h1>
                 <Input type="file" name='perfil' onChange={(e) => setProfileImg(e.target.files[0])} />

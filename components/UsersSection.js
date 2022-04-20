@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { getUsers } from '../services/user'
+import { Container, UL, Img } from '../styles/components/Section';
 
 export function Users () {
 
@@ -15,14 +16,16 @@ export function Users () {
   }, [])
 
   return(
-      <ul>
-        {users && users.map(user => (
+      <Container>
+        {users && users.splice(0,5).map(user => (
           <User key={user.name} {...user} />
         ))}
-      </ul>
+      </Container>
   )
 }
 
-const User = (user) => (
-  <li>{user.name}</li>
+const User = ({...user}) => (
+    <UL>
+      <Img src={user.profileImage} alt="" />
+    </UL>
 )

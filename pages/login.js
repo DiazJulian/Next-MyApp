@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Button, Form, Input } from '../styles/Login'
 import { withTransition } from '../transitionPage'
 import { useUser } from '../hooks/useUser'
+import Navigation from '../components/Navigation'
 
 function Login () {
 
@@ -21,7 +22,8 @@ function Login () {
     }
 
     return(
-        <>
+        <>  
+            <Navigation />
             <Form onSubmit={handleSubmit}>
                 <h1>Login</h1>
                 <Input type="email" onChange={(e) => setEmail(e.target.value)} placeholder="Email..." />

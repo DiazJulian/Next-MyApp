@@ -1,17 +1,26 @@
 import React from 'react'
-import { Aside } from '../styles/Aside'
-import {Container, Header, Layout} from '../styles/Layout'
+import Navigation from '../components/Navigation'
+import { UsersPosts } from '../components/UsersPosts'
+import { useUser } from '../hooks/useUser'
+import Header from '../components/Header'
 import { withTransition } from '../transitionPage'
+import Section from '../components/Section'
 
 function Home () {
+
+    const { session } = useUser()
+      
     return(
         <>
-            <h1>Aplicación de practica</h1>
-            <Header></Header>
-            <Layout>
-                <Container></Container>
-                <Aside></Aside>
-            </Layout>
+            <Navigation />
+            { !session ? 
+            <>
+            <Header />
+            <Section />
+            </>
+
+            :  <UsersPosts />
+            }    
         </>
     )
 }
