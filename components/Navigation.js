@@ -1,21 +1,18 @@
 import Link from 'next/link'
 import Logo from '../public/Logo2.svg'
-import { Nav, A, Profile, ProfileCnt } from '../styles/Navigation'
+import { Nav, Div, A, Profile, ProfileCnt } from '../styles/Navigation'
 import { useUser } from '../hooks/useUser'
 
 export default function Navigation ({page}) {
 
     const { session, name, profileImage } = useUser()
-    console.log(session, profileImage,page);
 
     return(
         <Nav>
-            <>
-                <Link href="/">
-                    <A><Logo /></A>
-                </Link>
-            </>
-            <div>
+            <Link href="/">
+                <A><Logo /></A>
+            </Link>
+            <Div>
                 {session ?
                     <ProfileCnt>
                         <Link href={`/user/${name}`}>
@@ -25,11 +22,11 @@ export default function Navigation ({page}) {
                     </ProfileCnt> 
                     :
                     <>
-                        <Link href="/login"><A>Login</A></Link>
-                        <Link href="/register"><A>Register</A></Link>
+                        <Link href="/login"><A>Iniciar Sesión</A></Link>
+                        <Link href="/register"><A>Crear Cuenta</A></Link>
                     </>
                 }
-            </div>
+            </Div>
         </Nav>
     )
 }

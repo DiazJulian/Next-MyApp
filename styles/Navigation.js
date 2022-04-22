@@ -8,12 +8,17 @@ export const Nav = styled.nav`
     display: flex;
     justify-content: space-around;
     align-items: center;
-    `
+`
+
+export const Div = styled.div`
+    display: flex;
+`
+
 export const A = styled.a`
     color: white;
+    font-size: 10px;
     cursor: pointer;
-    margin-left: 20px;
-    // padding: 0px 7px 0px 0px;
+    margin: 0 10px;
     
 `
 
