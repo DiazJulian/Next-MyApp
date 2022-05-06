@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import { getUsers } from '../services/user'
-import { Container, UL, Img } from '../styles/components/Section';
+import { getUsers } from '../../services/user'
+import { Container, UL, Img } from '../../styles/components/Section';
 
 export function Users () {
 

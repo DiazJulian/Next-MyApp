@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { Button, H1, SectionCtn } from '../styles/components/Section'
-import { Users } from './UsersSection'
+import { Users } from './Posts/UsersSection'
 
 export default function Section () {
   return(
