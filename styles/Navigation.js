@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 export const Nav = styled.nav`
     height: 50px;
@@ -12,6 +13,25 @@ export const Nav = styled.nav`
 
 export const Div = styled.div`
     display: flex;
+    align-items: center;
+`
+
+export const Icon = styled.i`
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    background: #ff00cc; 
+    background: -webkit-linear-gradient(to right, #333399, #ff00cc);
+    background: linear-gradient(to right, #333399, #ff00cc);
+    cursor: pointer;
+    color: #00dfff;
+    padding: 5px;
+    border-radius: 50%;
+`
+
+export const FontAwesome = styled(FontAwesomeIcon)`
+    width: 20px;
+    height: 20px;
 `
 
 export const A = styled.a`

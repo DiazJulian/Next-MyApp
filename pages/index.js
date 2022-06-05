@@ -5,25 +5,31 @@ import { useUser } from '../hooks/useUser'
 import Header from '../components/Header'
 import { withTransition } from '../transitionPage'
 import Section from '../components/Section'
-import Form from '../components/Posts/Form'
+import { usePost } from '../hooks/usePost'
+import Loading from '../components/Loaders/Loading'
 
 function Home () {
 
     const { session } = useUser()
+    const { loading } = usePost()
       
     return(
         <>
+        {
+            !loading ? <Loading />
+            :
+            <>
             <Navigation />
             { !session ? 
-            <>
-            <Header />
-            <Section />
-            </>
-            : <>
-            <Form /> 
-            <UsersPosts />
-            </>
-            }    
+                <>
+                <Header />
+                <Section />
+                </>
+                :
+                <UsersPosts />
+            } 
+            </>   
+        }
         </>
     )
 }

@@ -1,12 +1,15 @@
 import styled from 'styled-components'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-export const Container = styled.div`
-  border-radius: 90px 20px 90px 20px;
-  width: 85%;
-  padding: 10px;
-  margin: 60px 3%;
+export const ContainerPost = styled.div`
+  margin: 80px 3%;
   position: absolute;
+  width: 92%;
+`
+
+export const UserPost = styled.div`
+  border-radius: 90px 20px 90px 20px;
+  padding: 10px;
+  width: 90%;
   background: #3099bb;
 `
 
@@ -22,26 +25,12 @@ export const Image = styled.img`
   border-radius: 10px;
 `
 
-export const LikeIcon = styled.i`
-  position: absolute;
-  left: 92%;
-  bottom: 60%;
-  background: orange;
-  color: white;
-  padding: 5px;
-  border-radius: 10px;
+export const Name = styled.h2`
+  margin-left: 5px;
+  color: #003c6a;
 `
 
-export const DeleteIcon = styled.i`
-  position: absolute;
-  left: 92%;
-  bottom: 5%;
-  color: white;
-  background: red;
-  padding: 5px;
-  border-radius: 10px;
-`
-
-export const FontAwesome = styled(FontAwesomeIcon)`
-  height: 30px;
+export const H3 = styled.h3`
+  font-size: 20px;
+  color: #003c6a;
 `

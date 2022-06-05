@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export const Container = styled.div`
   width: 100%;
-  padding-top: 30px;
+  padding-top: 70px;
 `
 
 export const DivContainer = styled.div`
@@ -83,7 +83,7 @@ export const LikeIcon = styled.i`
   border-radius: 10px;
 `
 
-export const CommentIcon = styled.i`
+export const ViewIcon = styled.i`
   width: 22px;
   height: 40px;
   color: white;

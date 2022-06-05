@@ -1,18 +1,20 @@
 import React from 'react'
-import { faThumbsUp, faComment } from '@fortawesome/free-solid-svg-icons'
+import { faThumbsUp, faEye } from '@fortawesome/free-solid-svg-icons'
 import Link from 'next/link'
-import { CommentIcon, Container, Description, DivIcon, DivContainer, FontAwesome, Img, ImgCtn, LikeIcon, Name, Post } from '../../styles/components/AllPosts'
+import { ViewIcon, Container, Description, DivIcon, DivContainer, FontAwesome, Img, ImgCtn, LikeIcon, Name, Post } from '../../styles/components/AllPosts'
 import { usePost } from '../../hooks/usePost'
 
 export function UsersPosts () {
   
-  const { posts } = usePost()
-  
+  const { posts,newLike } = usePost()
+  console.log(posts)
+
   return(
     <Container>
-        {posts && posts.reverse().map(post => (
-          <DivContainer>
-              <Link href={`/post/${post._id}`}  key={post._id} >
+        {
+          posts && posts.reverse().map(post => (
+          <DivContainer key={post._id} >
+              <Link href={`/post/${post._id}`} >
               <Post>
                 <ImgCtn>
                   <Img src={post.profileImage} alt="" />
@@ -22,12 +24,12 @@ export function UsersPosts () {
               </Post>
               </Link>
               <DivIcon>
-              <LikeIcon>
+              <LikeIcon onClick={() => newLike(post._id)}>
                 <FontAwesome icon={faThumbsUp} /> {post.likes}
               </LikeIcon>
-              <CommentIcon>
-                <FontAwesome icon={faComment} /> {post.likes}
-              </CommentIcon>
+              <ViewIcon>
+                <FontAwesome icon={faEye} /> {post.views}
+              </ViewIcon>
               </DivIcon>
           </DivContainer>
         ))}
