@@ -11,7 +11,7 @@ export function useUser() {
   useEffect(() => { 
     const resUser = async () => {
       const res = await getSession()
-      console.log(res);
+      // console.log(res);
       if(res) {
         setSession(true)
         setName(res.name)
@@ -19,7 +19,7 @@ export function useUser() {
       }
     }
     resUser()
-    console.log(session, name, profileImage);
+    // console.log(session, name, profileImage);
   }, [session])
 
   const login = async (email,password) => {

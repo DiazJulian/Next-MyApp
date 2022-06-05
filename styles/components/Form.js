@@ -2,9 +2,10 @@ import styled from 'styled-components'
 
 export const Form = styled.form`
   display: flex;
+  height: 150px;
   width: 100%;
   justify-content: center;
-  padding-top: 60px;
+  padding-top: 100px;
 `
 
 export const Image = styled.img`
@@ -22,10 +23,6 @@ export const Textarea = styled.textarea`
   border-radius: 8px;
   padding: 10px;
   border: none;
-
-  &:focus {
-    height: 60px;
-  }
 
   &::-webkit-scrollbar {
     width: 8px;
