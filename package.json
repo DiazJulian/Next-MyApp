@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "next",
+    "lint": "next lint",
     "build": "next build",
     "start": "next start -p $PORT"
   },
@@ -29,14 +30,12 @@
     "@svgr/webpack": "6.2.1",
     "babel-plugin-styled-components": "2.0.2",
     "eslint": "^8.17.0",
+    "eslint-config-next": "^12.1.6",
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-n": "^15.2.1",
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-react": "^7.30.0",
     "standard": "16.0.4"
-  },
-  "eslintConfig": {
-    "extends": "./node_modules/standard/eslintrc.json"
   }
 }
