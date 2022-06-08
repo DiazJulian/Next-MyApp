@@ -9,29 +9,27 @@ import { usePost } from '../hooks/usePost'
 import Loading from '../components/Loaders/Loading'
 
 function Home () {
+  const { session } = useUser()
+  const { loading } = usePost()
 
-    const { session } = useUser()
-    const { loading } = usePost()
-      
-    return(
+  return (
         <>
         {
-            !loading ? <Loading />
-            :
-            <>
+            !loading
+              ? <Loading />
+              : <>
             <Navigation />
-            { !session ? 
-                <>
+            { !session
+              ? <>
                 <Header />
                 <Section />
                 </>
-                :
-                <UsersPosts />
-            } 
-            </>   
+              : <UsersPosts />
+            }
+            </>
         }
         </>
-    )
+  )
 }
 
 export default withTransition(Home)

@@ -5,11 +5,9 @@ import { ViewIcon, Container, Description, DivIcon, DivContainer, FontAwesome, I
 import { usePost } from '../../hooks/usePost'
 
 export function UsersPosts () {
-  
-  const { posts,newLike } = usePost()
-  console.log(posts)
+  const { posts, newLike } = usePost()
 
-  return(
+  return (
     <Container>
         {
           posts && posts.reverse().map(post => (
@@ -32,7 +30,7 @@ export function UsersPosts () {
               </ViewIcon>
               </DivIcon>
           </DivContainer>
-        ))}
+          ))}
     </Container>
   )
 }

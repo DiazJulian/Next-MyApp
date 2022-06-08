@@ -6,10 +6,9 @@ import { faPaperPlane } from '@fortawesome/free-solid-svg-icons'
 import { usePost } from '../../hooks/usePost'
 
 export default function FormPost () {
-
   const { newPost } = usePost()
   const [description, setDescription] = useState('')
-  const { name,profileImage } = useUser()
+  const { name, profileImage } = useUser()
 
   const handleChange = (e) => {
     setDescription(e.target.value)
@@ -17,11 +16,11 @@ export default function FormPost () {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    newPost(name,profileImage,description)
+    newPost(name, profileImage, description)
     setDescription('')
   }
 
-  return(
+  return (
     <>
       <Form onSubmit={handleSubmit}>
       <Image src={profileImage} alt="" />

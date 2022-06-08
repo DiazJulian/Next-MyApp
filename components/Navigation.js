@@ -4,18 +4,17 @@ import { Nav, Div, A, Profile, ProfileCnt, Icon, FontAwesome } from '../styles/N
 import { useUser } from '../hooks/useUser'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
 
-export default function Navigation ({page}) {
+export default function Navigation ({ page }) {
+  const { session, name, profileImage } = useUser()
 
-    const { session, name, profileImage } = useUser()
-
-    return(
+  return (
         <Nav>
             <Link href="/">
                 <Logo />
             </Link>
             <Div>
-                {session ?
-                    <>
+                {session
+                  ? <>
                     <Link href="/update">
                         <Icon><FontAwesome icon={faPlus} /></Icon>
                     </Link>
@@ -23,16 +22,15 @@ export default function Navigation ({page}) {
                         <Link href={`/user/${name}`}>
                             <Profile src={profileImage} alt="" />
                         </Link>
-                        { (page === name) && <Link href="/logout"><A>Salir</A></Link>  }
-                    </ProfileCnt> 
+                        { (page === name) && <Link href="/logout"><A>Salir</A></Link> }
+                    </ProfileCnt>
                     </>
-                    :
-                    <>
+                  : <>
                         <Link href="/login"><A>Iniciar Sesión</A></Link>
                         <Link href="/register"><A>Crear Cuenta</A></Link>
                     </>
                 }
             </Div>
         </Nav>
-    )
+  )
 }

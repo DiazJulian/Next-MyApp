@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 
 export const Form = styled.form`
   background: #bc89ff;
@@ -78,7 +78,7 @@ export const Label = styled.label`
     border-radius: 20px;
     font-size: 25px;
   }
-` 
+`
 
 export const Input = styled.input`
   display: block;

@@ -3,9 +3,8 @@ import { useButton } from '../../hooks/useButton'
 import { faThumbsUp, faEye, faTrash } from '@fortawesome/free-solid-svg-icons'
 import { Container, LikeIcon, ViewIcon, DeleteIcon, FontAwesome } from '../../styles/components/Buttons'
 
-export function Buttons ({post}) {
-  
-  const { likes,liked,NewLike,deletePost } = useButton(post)
+export function Buttons ({ post }) {
+  const { likes, liked, NewLike, deletePost } = useButton(post)
 
   const handleLike = () => {
     NewLike(post.post._id)
@@ -15,7 +14,7 @@ export function Buttons ({post}) {
     deletePost(post.post._id)
   }
 
-  return(
+  return (
     <Container>
       <LikeIcon disabled={liked} onClick={handleLike}>
         <FontAwesome icon={faThumbsUp} /> {likes}

@@ -1,20 +1,18 @@
-import React from 'react';
-import ContentLoader from "react-content-loader";
-
+import React from 'react'
+import ContentLoader from 'react-content-loader'
 
 const Loading = () => (
     <div>
-        <ContentLoader 
+        <ContentLoader
             speed={3}
-            width={"100%"}
+            width={'100%'}
             height={300}
             viewBox="0 0 400 460"
             backgroundColor="#c31432"
             foregroundColor="orange"
             >
-            <rect x="1" y="50" rx="2" ry="2" width="100%" height="3%" /> 
+            <rect x="1" y="50" rx="2" ry="2" width="100%" height="3%" />
         </ContentLoader>
-        
 
         <style jsx>{`
             div {
@@ -28,4 +26,4 @@ const Loading = () => (
     </div>
 )
 
-export default Loading; 
+export default Loading

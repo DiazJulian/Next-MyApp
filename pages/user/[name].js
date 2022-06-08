@@ -1,11 +1,10 @@
 import React from 'react'
-import Navigation from '../../components/Navigation';
-import { getUser } from '../../services/user';
-import { DivContainer, Profile } from '../../styles/Users';
+import Navigation from '../../components/Navigation'
+import { getUser } from '../../services/user'
+import { DivContainer, Profile } from '../../styles/Users'
 
-export default function User ({user}) {
-  console.log(user);
-  return(
+export default function User ({ user }) {
+  return (
     <>
     <Navigation page={user.user.name} />
     <DivContainer>
@@ -18,14 +17,12 @@ export default function User ({user}) {
 
 User.getInitialProps = async (ctx) => {
   const name = ctx.query.name
-  console.log(name);
   let user = {}
-  try{
+  try {
     const res = await getUser(name)
     user = res
-  }catch(error) {
-    console.log(error);
+  } catch (error) {
   }
 
-  return {user: user}
+  return { user }
 }
