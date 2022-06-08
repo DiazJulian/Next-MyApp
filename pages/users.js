@@ -2,20 +2,20 @@ import React, { useState } from 'react'
 import { getUsers } from '../services/user'
 import { Img, P, UL } from '../styles/Users'
 import { Input } from '../styles/Login'
-import Link from 'next/link';
+import Link from 'next/link'
 
-export default function Users ({users}) {
-  console.log(users);
+export default function Users ({ users }) {
+  console.log(users)
   const [search, setSearch] = useState('')
 
-  return(
+  return (
     <div>
       <Input onChange={(e) => setSearch(e.target.value)} autoFocus placeholder="..." />
       {users && users.filter(user => {
-        if(search === ""){
+        if (search === '') {
           return user
         }
-        if(user.name.toLowerCase().includes(search.toLowerCase())){
+        if (user.name.toLowerCase().includes(search.toLowerCase())) {
           return user
         }
       }).map(user => (
@@ -31,15 +31,13 @@ export default function Users ({users}) {
 }
 
 Users.getInitialProps = async () => {
-
   let users = []
-  try{
+  try {
     const res = await getUsers()
     users = res
-
-  }catch(error){
-    console.log(error);
+  } catch (error) {
+    console.log(error)
   }
 
-  return {users: users}
+  return { users }
 }

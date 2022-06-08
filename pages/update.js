@@ -3,7 +3,7 @@ import Form from '../components/Posts/Form'
 import Navigation from '../components/Navigation'
 
 export default function Update () {
-  return(
+  return (
     <>
       <Navigation />
       <Form />

@@ -19,9 +19,9 @@ export const getUserPost = async (user) => {
   return posts
 }
 
-export const newPostService = async (user,profileImage,description,) => {
-  const res = await axios.post(`${URL}/post/upload/`,{user,profileImage,description})
-  if(res) Router.push('/')
+export const newPostService = async (user, profileImage, description) => {
+  const res = await axios.post(`${URL}/post/upload/`, { user, profileImage, description })
+  if (res) Router.push('/')
   return res.data
 }
 
@@ -41,9 +41,8 @@ export const FavService = async (id) => {
   return favs
 }
 
-export const NewCommentService = async (postId,user,profileImage,comment) => {
-  const res = await axios.post(`${URL}/post/comment`, {postId,user,profileImage,comment})
-  console.log(res);
+export const NewCommentService = async (postId, user, profileImage, comment) => {
+  const res = await axios.post(`${URL}/post/comment`, { postId, user, profileImage, comment })
   return res.data
 }
 

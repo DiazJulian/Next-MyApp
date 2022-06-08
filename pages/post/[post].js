@@ -2,14 +2,12 @@ import React from 'react'
 import Link from 'next/link'
 import Navigation from '../../components/Navigation'
 import { getPost } from '../../services/posts'
-import { ContainerPost, UserPost, Image, ImageCnt, Name, H3 } from '../../styles/components/Post';
+import { ContainerPost, UserPost, Image, ImageCnt, Name, H3 } from '../../styles/components/Post'
 import { Buttons } from '../../components/Posts/Buttons'
-import { CommentContainer } from '../../components/Posts/CommentContainer';
+import { CommentContainer } from '../../components/Posts/CommentContainer'
 
-
-export default function Post ({post}) {
-
-  return(
+export default function Post ({ post }) {
+  return (
     <>
       <Navigation />
       <ContainerPost>
@@ -30,11 +28,9 @@ export default function Post ({post}) {
 }
 
 Post.getInitialProps = async (ctx) => {
-  
   const { post } = ctx.query
 
   const res = await getPost(post)
   console.log(res)
-  
   return { post: res.data }
 }

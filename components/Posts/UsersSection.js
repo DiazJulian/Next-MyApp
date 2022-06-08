@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react'
 import { getUsers } from '../../services/user'
-import { Container, UL, Img } from '../../styles/components/Section';
+import { Container, UL, Img } from '../../styles/components/Section'
 
 export function Users () {
-
   const [users, setUsers] = useState([])
 
   useEffect(() => {
@@ -12,19 +11,19 @@ export function Users () {
       setUsers(users)
     }
     allUsers()
-    console.log(users);
+    console.log(users)
   }, [])
 
-  return(
+  return (
       <Container>
-        {users && users.splice(0,5).map(user => (
+        {users && users.splice(0, 5).map(user => (
           <User key={user.name} {...user} />
         ))}
       </Container>
   )
 }
 
-const User = ({...user}) => (
+const User = ({ ...user }) => (
     <UL>
       <Img src={user.profileImage} alt="" />
     </UL>

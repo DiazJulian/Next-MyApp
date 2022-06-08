@@ -5,67 +5,66 @@ import { Form, Input, Button, H1, ImageCnt, Image, Label } from '../styles/Regis
 import { withTransition } from '../transitionPage'
 
 function Register () {
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [profileImage, setProfileImg] = useState('')
+  const [imageForm, setImgForm] = useState('https://res.cloudinary.com/dhehnqygp/image/upload/v1612474875/user_d5ltrx.png')
+  const [isValid, setIsValid] = useState(true)
 
-    const [name, setName] = useState('')
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-    const [profileImage, setProfileImg] = useState('')
-    const [imageForm, setImgForm] = useState('https://res.cloudinary.com/dhehnqygp/image/upload/v1612474875/user_d5ltrx.png')
-    const [isValid, setIsValid] = useState(true)
+  const { register } = useUser()
 
-    const { register } = useUser()
+  useEffect(() => {
+    handleDisable()
+    console.log(isValid)
+    console.log(profileImage)
+  }, [name, email, password, profileImage])
 
-    useEffect(() => {
-        handleDisable()
-        console.log(isValid);
-        console.log(profileImage);
-    }, [name,email,password,profileImage])
+  const handleImgChange = (e) => {
+    setProfileImg(e.target.files[0])
 
-    const handleImgChange = (e) => {
-        setProfileImg(e.target.files[0])
-
-        const reader = new FileReader()
-        reader.onload = () => {
-            if (reader.readyState === 2) {
-            setImgForm(reader.result)
-            }
-        }
-        reader.readAsDataURL(e.target.files[0])
-        console.log(imageForm);
+    const reader = new FileReader()
+    reader.onload = () => {
+      if (reader.readyState === 2) {
+        setImgForm(reader.result)
+      }
     }
+    reader.readAsDataURL(e.target.files[0])
+    console.log(imageForm)
+  }
 
-    const handleDisable = () => {
-        if((name.length > 2 && email.length > 8 && password.length > 8) && profileImage ) {
-            setIsValid(false)
-        }else{
-            setIsValid(true)
-        }
+  const handleDisable = () => {
+    if ((name.length > 2 && email.length > 8 && password.length > 8) && profileImage) {
+      setIsValid(false)
+    } else {
+      setIsValid(true)
     }
+  }
 
-    const handleSubmit = async (e) => {
-        e.preventDefault()
-        const data = new FormData()
-        data.append('name', name)
-        data.append('email', email)
-        data.append('password', password)
-        data.append('perfil', profileImage)
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    const data = new FormData()
+    data.append('name', name)
+    data.append('email', email)
+    data.append('password', password)
+    data.append('perfil', profileImage)
 
-        const config = {
-            headers: {'Content-Type': 'multipart/form-data'}
-        }
-        const res = await register(data,config)
-        console.log(res);
+    const config = {
+      headers: { 'Content-Type': 'multipart/form-data' }
     }
+    const res = await register(data, config)
+    console.log(res)
+  }
 
-    return(
-        <>  
+  return (
+        <>
             <Navigation />
             <Form onSubmit={handleSubmit}>
                 <H1>Registrate con la foto que mas te guste</H1>
                 <ImageCnt>
                     <Image src={imageForm} alt=""/>
                 </ImageCnt>
-                <Input type="file" name='perfil' id="input" style={{display: "none"}} 
+                <Input type="file" name='perfil' id="input" style={{ display: 'none' }}
                 onChange={handleImgChange} />
                 <Label htmlFor="input" >Elige una imagen</Label>
                 <Input type="text" name='name' onChange={(e) => setName(e.target.value)}
@@ -77,7 +76,7 @@ function Register () {
                 <Button disabled={isValid}>Registrarme</Button>
             </Form>
         </>
-    )
+  )
 }
 
 export default withTransition(Register)

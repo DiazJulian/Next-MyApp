@@ -29,8 +29,8 @@ export const ImgCtn = styled.div`
   display: flex;
   line-height: 0;
   `
-  
-  export const Img = styled.img`
+
+export const Img = styled.img`
   height: 40px;
   width: 40px;
   cursor: pointer;

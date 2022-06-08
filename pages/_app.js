@@ -7,11 +7,6 @@ const GlobalStyle = createGlobalStyle`
     padding: 2%;
     box-sizing: border-box;
     background: #003c6a
-    // background: #858aff;
-    // rgb(88 84 255 / 90%)
-    // background: #c31432;  /* fallback for old browsers */
-    // background: -webkit-linear-gradient(to bottom, #240b36, #c31432);  /* Chrome 10-25, Safari 5.1-6 */
-    // background: linear-gradient(to bottom, #240b36, #c31432); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   }
   body::-webkit-scrollbar {
     width: 8px;
@@ -44,7 +39,7 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-export default function App({ Component, pageProps }) {
+export default function App ({ Component, pageProps }) {
   return (
     <>
       <GlobalStyle />

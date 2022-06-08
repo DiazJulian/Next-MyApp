@@ -5,15 +5,14 @@ import { useUser } from '../../hooks/useUser'
 import { usePost } from '../../hooks/usePost'
 import useTimeAgo from '../../hooks/useTimeAgo'
 
-export function CommentCard ({DeleteComment, ...comment}) {
-
+export function CommentCard ({ DeleteComment, ...comment }) {
   const { name } = useUser()
   const { userPost } = usePost()
   const { createdAt } = comment
   const date = new Date(createdAt)
   const time = useTimeAgo(+date)
 
-  return(
+  return (
     <CommentDiv key={comment._id}>
       <User>
         <Link href={`/user/${comment.user}`}>

@@ -1,8 +1,8 @@
-import React from "react"
-import { P, StyledFooter } from "../styles/Footer"
+import React from 'react'
+import { P, StyledFooter } from '../styles/Footer'
 
 export default function Footer () {
-  return(
+  return (
     <StyledFooter>
       <div><P>My App</P></div>
       <div>

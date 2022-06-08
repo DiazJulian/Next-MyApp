@@ -4,7 +4,7 @@ import { Button, H1, SectionCtn } from '../styles/components/Section'
 import { Users } from './Posts/UsersSection'
 
 export default function Section () {
-  return(
+  return (
     <SectionCtn>
       <H1>¡Encuentra a gente conocida y mira lo que estan publicando!</H1>
       <Button>

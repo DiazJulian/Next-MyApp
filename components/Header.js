@@ -3,8 +3,7 @@ import Lottie from 'react-lottie'
 import { Header, H1, Design1, Design2 } from '../styles/components/Header'
 import lottieMobile from '../Lottie/Mobile.json'
 
-export default function HeaderComponent () {  
-  
+export default function HeaderComponent () {
   const Options = {
     loop: true,
     autoplay: true,
@@ -12,7 +11,7 @@ export default function HeaderComponent () {
       preserveAspectRatio: 'xMidYMid slice'
     }
   }
-  return(
+  return (
     <>
     <Header>
       <H1>Empieza un debate o consulta lo que estas necesitando <br/>
@@ -23,4 +22,4 @@ export default function HeaderComponent () {
     <Design2></Design2>
     </>
   )
-} 
+}

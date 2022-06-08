@@ -18,7 +18,7 @@ const dateDiff = timestamp => {
 }
 
 export default function useTimeAgo (timestamp) {
-  const {value, unit} = dateDiff(timestamp)
+  const { value, unit } = dateDiff(timestamp)
 
   const rtf = new Intl.RelativeTimeFormat('es', { style: 'long' })
   return rtf.format(value, unit)
