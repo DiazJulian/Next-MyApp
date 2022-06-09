@@ -1,6 +1,6 @@
 import axios from 'axios'
 import Router from 'next/router'
-import { URL } from '../config'
+const URL = process.env.NEXT_PUBLIC_URL
 
 export const LoginService = async (email, password) => {
   try {

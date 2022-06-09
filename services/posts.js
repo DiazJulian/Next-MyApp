@@ -1,6 +1,6 @@
-import { URL } from '../config'
 import axios from 'axios'
 import Router from 'next/router'
+const URL = process.env.NEXT_PUBLIC_URL
 
 export const getPosts = async () => {
   const res = await axios.get(`${URL}/post/posts`)
