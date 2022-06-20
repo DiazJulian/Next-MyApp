@@ -34,3 +34,9 @@ export const H3 = styled.h3`
   font-size: 20px;
   color: #003c6a;
 `
+
+export const Time = styled.p`
+  color: white;
+  font-size: 10px;
+  text-transform: uppercase;
+`

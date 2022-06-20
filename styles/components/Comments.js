@@ -96,7 +96,7 @@ export const Span = styled.span`
 `
 
 export const Time = styled.p`
-  color: white;
+  color: #afafaf;
   font-size: 10px;
 `
 
@@ -112,5 +112,6 @@ export const FontAwesomeDlt = styled(FontAwesomeIcon)`
 
 export const Comment = styled.p`
   color: white;
+  margin: 0;
   overflow-wrap: break-word;
 `

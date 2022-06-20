@@ -65,6 +65,14 @@ export const Description = styled.p`
   }
 `
 
+export const Time = styled.p`
+  color: #add8e6;
+  font-size: 10px;
+  text-transform: uppercase;
+  position: relative;
+  top: 25%;
+`
+
 export const DivIcon = styled.div`
   display: grid;
   margin-left: -40px;
@@ -83,7 +91,7 @@ export const LikeIcon = styled.i`
   border-radius: 10px;
 `
 
-export const ViewIcon = styled.i`
+export const CommentIcon = styled.i`
   width: 22px;
   height: 40px;
   color: white;
