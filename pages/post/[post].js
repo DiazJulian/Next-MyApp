@@ -26,7 +26,7 @@ export default function Post ({ post }) {
           <H3>{post.post.description}</H3>
         </UserPost>
         <Time>{postTime}</Time>
-        <Buttons post={post} />
+        <Buttons post={post.post} />
         <CommentContainer post={post} />
       </ContainerPost>
     </>
