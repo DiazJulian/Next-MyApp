@@ -2,25 +2,30 @@ import styled from 'styled-components'
 
 export const Header = styled.header`
     display: flex;
-    padding-top: 60px;
+    padding-top: 30px;
     height: 300px;
     width: 100%;
     text-align: center;
+    align-items: center;
     background: #add8e6;
     border-radius: 10px 10px 70px 0;
 
     @media screen and (min-width: 500px) {
-        height: 250px;
+        height: 290px;
     }
 
-    @media screen and (min-width: 800px) {
-        height: 350px;
+    @media screen and (min-width: 800px) and (orientation: portrait) {
+        height: 600px;
     }
 `
 export const H1 = styled.h1`
     width: 40%;
-    color: white;
+    color: #4b00ff;
     font-size: 18px;
+
+    @media screen and (min-width: 800px) and (orientation: portrait) {
+        font-size: 40px;
+    }
 `
 
 export const Design1 = styled.div`
@@ -30,6 +35,10 @@ export const Design1 = styled.div`
     position: relative;
     border: transparent;
     z-index: -100;
+
+    @media screen and (min-width: 800px) and (orientation: portrait) {
+        height: 200px;
+    }
 `
 
 export const Design2 = styled.div`
@@ -41,4 +50,9 @@ export const Design2 = styled.div`
     top: -100px;
     border: transparent;
     border-radius: 100px 0 0 0;
+
+    @media screen and (min-width: 800px) and (orientation: portrait) {
+        height: 200px;
+        top: -200px;
+    }
 `

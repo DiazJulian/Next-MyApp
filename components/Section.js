@@ -7,9 +7,9 @@ export default function Section () {
   return (
     <SectionCtn>
       <H1>¡Encuentra a gente conocida y mira lo que estan publicando!</H1>
-      <Button>
-        <Link href="/register">Crear cuenta</Link>
-      </Button>
+      <Link href="/register">
+        <Button>Crear cuenta</Button>
+      </Link>
       <Users />
     </SectionCtn>
   )

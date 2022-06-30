@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import Link from 'next/link'
 import { getUsers } from '../../services/user'
 import { Container, UL, Img } from '../../styles/components/Section'
 
@@ -17,14 +18,16 @@ export function Users () {
   return (
       <Container>
         {users && users.splice(0, 5).map(user => (
-          <User key={user.name} {...user} />
+          <User key={user._id} {...user} />
         ))}
       </Container>
   )
 }
 
 const User = ({ ...user }) => (
-    <UL>
-      <Img src={user.profileImage} alt="" />
-    </UL>
+    <Link href={`/user/${user.name}`}>
+      <UL>
+        <Img src={user.profileImage} alt="" />
+      </UL>
+    </Link>
 )
