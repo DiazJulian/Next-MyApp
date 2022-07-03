@@ -44,15 +44,16 @@ export const logOut = () => {
   Router.push('/login')
 }
 
-export const redirectIfAuth = () => {
-  const user = getSession()
+export const redirectIfAuth = async () => {
+  const user = await getSession()
   if (user) {
+    console.log(user)
     Router.push('/users')
   }
 }
 
-export const redirectIfNotAuth = () => {
-  const user = getSession()
+export const redirectIfNotAuth = async () => {
+  const user = await getSession()
   if (!user) {
     Router.push('/login')
   }

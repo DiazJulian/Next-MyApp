@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Navigation from '../components/Navigation'
 import { useUser } from '../hooks/useUser'
+import { redirectIfAuth } from '../services/user'
 import { Form, Input, Button, H1, ImageCnt, Image, Label } from '../styles/Register'
 import { withTransition } from '../transitionPage'
 
@@ -16,8 +17,7 @@ function Register () {
 
   useEffect(() => {
     handleDisable()
-    console.log(isValid)
-    console.log(profileImage)
+    redirectIfAuth()
   }, [name, email, password, profileImage])
 
   const handleImgChange = (e) => {

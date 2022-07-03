@@ -3,6 +3,7 @@ import { Button, Form, H1, Input } from '../styles/Login'
 import { withTransition } from '../transitionPage'
 import { useUser } from '../hooks/useUser'
 import Navigation from '../components/Navigation'
+import { redirectIfAuth } from '../services/user'
 
 function Login () {
   const [email, setEmail] = useState('')
@@ -12,6 +13,7 @@ function Login () {
   const { login } = useUser()
 
   useEffect(() => {
+    redirectIfAuth()
     handleDisable()
   }, [email, password, isValid])
 

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Link from 'next/link'
 import Navigation from '../../components/Navigation'
 import { getPost } from '../../services/posts'
@@ -6,11 +6,16 @@ import { ContainerPost, UserPost, Image, ImageCnt, Name, H3, Time } from '../../
 import { Buttons } from '../../components/Posts/Buttons'
 import { CommentContainer } from '../../components/Posts/CommentContainer'
 import useTimeAgo from '../../hooks/useTimeAgo'
+import { redirectIfNotAuth } from '../../services/user'
 
 export default function Post ({ post }) {
   const { createdAt } = post.post
   const time = new Date(createdAt)
   const postTime = useTimeAgo(+time)
+
+  useEffect(() => {
+    redirectIfNotAuth()
+  }, [])
 
   return (
     <>
