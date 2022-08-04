@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
-import { getUsers } from '../../services/user'
-import { Container, UL, Img } from '../../styles/components/Section'
+import { getUsers } from '../services/user'
+import { Container, UL, Img } from '../styles/components/Section'
 
 export function Users () {
   const [users, setUsers] = useState([])

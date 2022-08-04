@@ -70,3 +70,13 @@ export const getUser = async (name) => {
   const user = res.data
   return user
 }
+
+export const newRed = async (user, red) => {
+  const redes = await axios.post(`${URL}/user/newred`, { user, red })
+  return redes
+}
+
+export const deleteRed = async (id) => {
+  const deleted = await axios.delete(`${URL}/user/deletered/${id}`)
+  return deleted
+}

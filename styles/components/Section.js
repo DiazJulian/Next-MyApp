@@ -55,6 +55,7 @@ export const UL = styled.ul`
 export const Img = styled.img`
   height: 50px;
   width: 50px;
+  cursor: pointer;
   border-radius: 10px;
 
   @media screen and (min-width: 800px) and (orientation: portrait) {

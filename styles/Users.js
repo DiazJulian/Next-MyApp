@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 
-// Users page
 export const UL = styled.ul`
   margin: 0;
   padding: 0;
@@ -18,20 +17,4 @@ export const P = styled.p`
   font-size: 20px;
   margin-left: 5px;
 
-`
-// User page
-export const DivContainer = styled.div`
-  height: 250px;
-  width: 100%;
-  padding-top: 20px;
-  text-align: center;
-  border-radius: 0 0 70px 0px;
-`
-
-export const Profile = styled.img`
-  heigth: 150px;
-  width: 150px;
-  border-radius: 10px;
-  text-align: center;
-  margin-top: 50px;
 `

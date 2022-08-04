@@ -1,16 +1,15 @@
 import React from 'react'
 import Navigation from '../../components/Navigation'
+import { MyPosts } from '../../components/Posts/MyPosts'
+import { Profile } from '../../components/Profile'
 import { getUser } from '../../services/user'
-import { DivContainer, Profile } from '../../styles/Users'
 
 export default function User ({ user }) {
   return (
     <>
-    <Navigation page={user.user.name} />
-    <DivContainer>
-      <Profile src={user.user.profileImage} alt="" />
-      <h1>{user.user.name}</h1>
-    </DivContainer>
+      <Navigation page={user.user.name} />
+      <Profile user={user} />
+      <MyPosts user={user.user}/>
     </>
   )
 }
