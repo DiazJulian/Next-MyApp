@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 // Form
 export const Form = styled.form`
-  position: absolute;
+  // position: absolute;
   background: blueviolet;
   text-align: center;
   margin: 60px 0%;
@@ -37,9 +37,9 @@ export const H4 = styled.h4`
 
 // Component
 export const Container = styled.div`
-  position: absolute;
+  // position: absolute;
   width: 95%;
-  margin-top: 430px;
+  margin-top: 100px;
 `
 
 export const Card = styled.div`

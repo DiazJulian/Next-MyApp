@@ -9,7 +9,6 @@ export default function questions ({ user }) {
       <Navigation />
       <Profile user={user} />
       <Questions user={user.user.name} />
-      {console.log(user.user.name)}
     </>
   )
 }

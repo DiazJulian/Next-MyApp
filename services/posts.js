@@ -50,3 +50,21 @@ export const DeleteCommentService = async (Id) => {
   const res = await axios.delete(`${URL}/post/delcom/${Id}`)
   return res.data
 }
+
+// Questions
+
+export const getQuestion = async (id) => {
+  const res = await axios.get(`${URL}/question/qu/${id}`)
+  return res.data
+}
+
+export const userQuestion = async (user) => {
+  const res = await axios.get(`${URL}/question/q/${user}`)
+  console.log(res)
+  return res.data
+}
+
+export const newQuestion = async (user, question) => {
+  const res = await axios.post(`${URL}/question/newquestion`, { user, question })
+  return res.data
+}
