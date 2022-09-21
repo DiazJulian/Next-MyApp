@@ -1,38 +1,32 @@
-import { useEffect, useState } from 'react'
-import Link from 'next/link'
-import { userQuestion } from '../../services/posts'
+import { useEffect } from 'react'
 import { useUser } from '../../hooks/useUser'
-import { Card, Container, QH3 } from '../../styles/components/Questions'
+import { useQuestion } from '../../hooks/useQuestion'
+import { Container, Section } from '../../styles/components/Questions'
 import { QForm } from './QForm'
+import { PrivateCard } from './QPrivateCard'
+import { PublicCard } from './QPublicCard'
 
 export function Questions ({ user }) {
-  const [questions, setQuestions] = useState([])
   const { name } = useUser()
+  const { allQuestions, getUserQuestions } = useQuestion()
 
   useEffect(() => {
-    const allQuestions = async () => {
-      const res = await userQuestion(user)
-      console.log(res)
-      if (res) {
-        setQuestions(res)
-      }
-    }
-    allQuestions()
+    getUserQuestions(user)
   }, [])
 
   return (
-    <Container>
+    <Section>
       {
         (name !== user) &&
         <QForm user={user} />
       }
-      {questions && questions.map(item => (
-        <Link href={`/question/${item._id}`} key={item._id} >
-          <Card>
-            <QH3>{item.question}</QH3>
-          </Card>
-        </Link>
+      <Container>
+      {allQuestions && allQuestions.map(item => (
+        user === name
+          ? <PrivateCard key={item._id} {...item} />
+          : <PublicCard key={item._id} {...item} />
       ))}
-    </Container>
+      </Container>
+    </Section>
   )
 }

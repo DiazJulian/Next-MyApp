@@ -1,23 +1,27 @@
+import { useEffect } from 'react'
 import Navigation from '../../components/Navigation'
-import { getQuestion } from '../../services/posts'
+import { QuestionId } from '../../components/Question/QuestionId'
+import { GetQuestionService } from '../../services/question'
+import { redirectIfNotAuth } from '../../services/user'
 
-export default function QuestionId ({ post }) {
+export default function QuestionPage ({ post }) {
+  useEffect(() => {
+    redirectIfNotAuth()
+  }, [])
+
   return (
     <>
       <Navigation />
-      <div>
-        <h1>{post.question.question}</h1>
-      {console.log(post)}
-      </div>
+      <QuestionId post={post} />
     </>
   )
 }
 
-QuestionId.getInitialProps = async (ctx) => {
+QuestionPage.getInitialProps = async (ctx) => {
   const { id } = ctx.query
   let post
   try {
-    const res = await getQuestion(id)
+    const res = await GetQuestionService(id)
     post = res
   } catch (error) {
 

@@ -1,9 +1,10 @@
 import { useState } from 'react'
-import { newQuestion } from '../../services/posts'
+import { useQuestion } from '../../hooks/useQuestion'
 import { Button, Form, H3, H4, Textarea } from '../../styles/components/Questions'
 
 export function QForm ({ user }) {
   const [question, setQuestion] = useState('')
+  const { newQuestion } = useQuestion()
 
   const handleSubmit = async (e) => {
     e.preventDefault()

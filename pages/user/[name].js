@@ -1,14 +1,24 @@
-import React from 'react'
+import Link from 'next/link'
 import Navigation from '../../components/Navigation'
 import { MyPosts } from '../../components/Posts/MyPosts'
 import { Profile } from '../../components/Profile'
 import { getUser } from '../../services/user'
+import { H3, Section } from '../../styles/components/MyPosts'
 
 export default function User ({ user }) {
+  const { name } = user.user
   return (
     <>
-      <Navigation page={user.user.name} />
+      <Navigation page={name} />
       <Profile user={user} />
+      <Section>
+        <Link href={`/user/${name}`} >
+          <H3>Publicaciones</H3>
+        </Link>
+        <Link href={`/user/${name}/questions`} >
+          <H3>Preguntas</H3>
+        </Link>
+      </Section>
       <MyPosts user={user.user}/>
     </>
   )
