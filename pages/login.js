@@ -36,7 +36,7 @@ function Login () {
             <Form onSubmit={handleSubmit}>
                 <H1>Inicia Sesión</H1>
                 <Input type="email" onChange={(e) => setEmail(e.target.value)}
-                 placeholder="Email..." />
+                 placeholder="Email..." autoFocus />
                 <Input type="password" onChange={(e) => setPassword(e.target.value)}
                  placeholder="Password..." />
                 <Button disabled={isValid}>Iniciar Sesión</Button>

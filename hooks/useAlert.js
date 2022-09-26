@@ -17,7 +17,7 @@ export function useAlert () {
       return null
     }
     alert({
-      title: '¡Todo correcto wachin! 😎',
+      title: '¡Todo correcto!',
       icon: 'success',
       timer: 2000
     })

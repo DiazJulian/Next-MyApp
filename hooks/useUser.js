@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { getSession, LoginService, RegisterService } from '../services/user'
-import Router from 'next/router'
+import Router, { useRouter } from 'next/router'
 import { useAlert } from './useAlert'
 
 export function useUser () {
@@ -8,6 +8,7 @@ export function useUser () {
   const [name, setName] = useState('')
   const [profileImage, setProfileImg] = useState('')
   const { LoginAlert, RegisterAlert } = useAlert()
+  const router = useRouter()
 
   useEffect(() => {
     const resUser = async () => {
@@ -26,7 +27,7 @@ export function useUser () {
     LoginAlert(res)
     if (res.data) {
       window.localStorage.setItem('gamdecs', res.data)
-      Router.push('/')
+      router.back()
     }
   }
 

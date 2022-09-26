@@ -9,7 +9,7 @@ export default function questions ({ user }) {
   const { name } = user.user
   return (
     <>
-      <Navigation />
+      <Navigation page={name} />
       <Profile user={user} />
       <Section>
         <Link href={`/user/${name}`} >
