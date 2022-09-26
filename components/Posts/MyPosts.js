@@ -14,7 +14,7 @@ export function MyPosts ({ user }) {
     console.log(user)
     console.log(posts)
     UserPosts()
-  }, [])
+  }, [user])
 
   return (
     <>
