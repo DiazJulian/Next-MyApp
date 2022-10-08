@@ -5,16 +5,15 @@ import { Card, Container, Description, Name } from '../../styles/components/MyPo
 
 export function MyPosts ({ user }) {
   const [posts, setPosts] = useState()
+  const { name } = user
 
   useEffect(() => {
     const UserPosts = async () => {
-      const res = await getUserPost(user.name)
+      const res = await getUserPost(name)
       setPosts(res)
     }
-    console.log(user)
-    console.log(posts)
     UserPosts()
-  }, [user])
+  }, [name])
 
   return (
     <>

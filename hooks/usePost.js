@@ -27,7 +27,6 @@ export function usePost () {
     if (session) {
       const res = await getPosts()
       setPosts(res)
-      console.log(res)
     }
   }
 
@@ -36,7 +35,6 @@ export function usePost () {
     if (res) {
       setPosts(posts.concat(res))
       allPosts()
-      console.log(res)
     }
   }
 
@@ -44,14 +42,12 @@ export function usePost () {
     await LikeService(id)
     setLikes(likes + 1)
     setLoading(true)
-    console.log('New Like')
   }
 
   const getAllComments = async () => {
     const postId = query.post
     if (postId) {
       const res = await getPost(postId)
-      console.log(res)
       setAllComment(res.data.comment)
       setUserPost(res.data.post.user)
     }
@@ -59,7 +55,6 @@ export function usePost () {
 
   const newComments = async (postId, name, profileImage, comment) => {
     const res = await NewCommentService(postId, name, profileImage, comment)
-    console.log(postId)
     if (res) getAllComments()
   }
 

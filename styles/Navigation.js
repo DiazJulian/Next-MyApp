@@ -19,11 +19,11 @@ export const Div = styled.div`
     background: -webkit-linear-gradient(to right, #E100FF, #7F00FF);
     background: linear-gradient(to right, #E100FF, #7F00FF);
     border-radius: 10px;
-    padding: 5px 0;
+    padding: 5px;
     margin-right: 7px;
     
     @media screen and (min-width: 500px) {
-        padding: 8px 0;
+        padding: 8px 5px;
     }
 `
 
@@ -65,4 +65,5 @@ export const Profile = styled.img`
     height: 40px;
     width: 40px;
     border-radius: 10px;
+    cursor: pointer;
 `

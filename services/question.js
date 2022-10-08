@@ -13,7 +13,6 @@ export const GetQuestionService = async (id) => {
 export const UserQuestionService = async (user) => {
   try {
     const res = await axios.get(`${URL}/question/q/${user}`)
-    console.log(res)
     return res.data
   } catch (error) {
     throw new Error('Error al obtener User Question')

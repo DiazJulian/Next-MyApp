@@ -4,7 +4,6 @@ import { LikeService, deletePostService } from '../services/posts'
 // Creamos un hook para interacción de los usuarios con los posts
 // para en un futuro manejar mas datos
 export function useButton (post) {
-  console.log(post)
   const [likes, setLikes] = useState(post.likes)
   const [liked, setLiked] = useState(false)
 
@@ -18,7 +17,6 @@ export function useButton (post) {
 
   const deletePost = async (id) => {
     await deletePostService(id)
-    console.log('Delete')
   }
 
   return {

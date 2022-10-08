@@ -41,13 +41,12 @@ export const getSession = async () => {
 
 export const logOut = () => {
   window.localStorage.removeItem('gamdecs')
-  Router.push('/login')
+  Router.push('/')
 }
 
 export const redirectIfAuth = async () => {
   const user = await getSession()
   if (user) {
-    console.log(user)
     Router.push('/users')
   }
 }

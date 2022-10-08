@@ -15,6 +15,7 @@ export const H3 = styled.h3`
   color: #ff00cc;
 `
 export const Textarea = styled.textarea`
+  background: #f6b3ff;
   width: 80%;
   height: 70px;
   padding: 10px;
@@ -24,8 +25,8 @@ export const Textarea = styled.textarea`
 
 export const Button = styled.button`
   padding: 10px;
-  background: #00ffe7;
-  color: #7f00ff;
+  background: #00d724;
+  color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -56,7 +57,7 @@ export const Container = styled.div`
 export const Card = styled.div`
   min-height: 100px;
   padding: 10px;
-  background: #cc00ff;
+  background: #0066ff;
   margin: 10px 0;
   border-radius: 10px;
   cursor: pointer;
@@ -82,7 +83,7 @@ export const CheckedCard = styled.div`
   display: grid;
   min-height: 100px;
   padding: 10px;
-  background: #0066ff;
+  background: #4b93ff;
   margin: 10px 0;
   border-radius: 10px;
   cursor: pointer;

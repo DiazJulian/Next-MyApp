@@ -40,8 +40,13 @@ export default function Post ({ post }) {
 
 Post.getInitialProps = async (ctx) => {
   const { post } = ctx.query
+  let userPost
 
-  const res = await getPost(post)
-  console.log(res)
-  return { post: res.data }
+  try {
+    const res = await getPost(post)
+    userPost = res.data
+  } catch (error) {
+    throw new Error('Error al obtener post')
+  }
+  return { post: userPost }
 }

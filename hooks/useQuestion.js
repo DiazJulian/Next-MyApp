@@ -10,13 +10,11 @@ export function useQuestion () {
   const { query } = useRouter()
 
   useEffect(() => {
-    console.log(allComments)
     query.id && getAllComments()
   }, [query.id])
 
   const getUserQuestions = async (user) => {
     const res = await UserQuestionService(user)
-    console.log(user)
     res && setQuestions(res)
   }
 
@@ -32,10 +30,8 @@ export function useQuestion () {
 
   const getAllComments = async () => {
     const id = query.id
-    console.log(id)
     const res = await GetQuestionService(id)
     if (res) {
-      console.log(res)
       setAllComments(res.comments)
       setUserPost(res.question.user)
     }
