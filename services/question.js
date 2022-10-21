@@ -1,4 +1,5 @@
 import axios from 'axios'
+import Router from 'next/router'
 const URL = process.env.NEXT_PUBLIC_URL
 
 export const GetQuestionService = async (id) => {
@@ -34,6 +35,16 @@ export const NewCommentService = async (postId, user, profileImage, comment) => 
     return res.data
   } catch (error) {
     throw new Error('Error al crear nuevo comentario')
+  }
+}
+
+export const DeleteQuestionService = async (id, user) => {
+  try {
+    const res = await axios.delete(`${URL}/question/delete/${id}`)
+    Router.push(`/user/${user}/questions`)
+    return res
+  } catch (error) {
+    throw new Error('Error al eliminar question')
   }
 }
 

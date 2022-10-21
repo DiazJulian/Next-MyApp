@@ -28,6 +28,11 @@ export const UserImg = styled.img`
   height: 30px;
   border-radius: 5px;
   margin-right: 5px;
+
+  @media screen and (min-width: 700px) {
+    width: 40px;
+    height: 40px;
+  }
 `
 
 export const Textarea = styled.textarea`
@@ -40,6 +45,10 @@ export const Textarea = styled.textarea`
 
   &::-webkit-scrollbar {
     display: none;
+  }
+  
+  @media screen and (min-width: 700px) {
+    width: 80%;
   }
 `
 
@@ -80,6 +89,11 @@ export const Image = styled.img`
   height: 30px;
   cursor: pointer;
   border-radius: 5px;
+  
+  @media screen and (min-width: 700px) {
+    width: 40px;
+    height: 40px;
+  }
 `
 
 export const Name = styled.p`
@@ -87,6 +101,10 @@ export const Name = styled.p`
   color: white;
   margin-left: 3px;
   overflow-wrap: break-word;
+  
+  @media screen and (min-width: 700px) {
+    font-size: 22px;
+  }
 `
 
 export const Span = styled.span`
@@ -114,4 +132,8 @@ export const Comment = styled.p`
   color: white;
   margin: 0;
   overflow-wrap: break-word;
+  
+  @media screen and (min-width: 700px) {
+    font-size: 20px;
+  }
 `
