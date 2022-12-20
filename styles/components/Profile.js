@@ -19,3 +19,16 @@ export const Image = styled.img`
 export const Name = styled.h1`
   color: #00c6ff;
 `
+
+export const DisableImage = styled.img`
+  height: 150px;
+  width: 150px;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 50px;
+  object-fit: cover;
+`
+
+export const DisableName = styled.h1`
+  color: #00c6ff;
+`

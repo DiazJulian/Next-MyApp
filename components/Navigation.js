@@ -2,10 +2,10 @@ import Link from 'next/link'
 import Logo from '../public/Logo2.svg'
 import { Nav, Div, A, Profile, ProfileCnt, Icon, FontAwesome } from '../styles/Navigation'
 import { useUser } from '../hooks/useUser'
-import { faPlus } from '@fortawesome/free-solid-svg-icons'
+import { faGear, faPlus, faUsers } from '@fortawesome/free-solid-svg-icons'
 
 export default function Navigation ({ page }) {
-  const { session, name, profileImage } = useUser()
+  const { session, name, profileImage, userAdmin } = useUser()
 
   return (
         <Nav>
@@ -15,14 +15,22 @@ export default function Navigation ({ page }) {
             <Div>
                 {session
                   ? <>
+                    <Link href="/users">
+                      <Icon><FontAwesome icon={faUsers} /></Icon>
+                    </Link>
                     <Link href="/update">
                         <Icon><FontAwesome icon={faPlus} /></Icon>
                     </Link>
                     <ProfileCnt>
-                        <Link href={`/user/${name}`}>
-                            <Profile src={profileImage} alt="" />
-                        </Link>
-                        { (page === name) && <Link href="/logout"><A>Salir</A></Link> }
+                      <Link href={`/user/${name}`}>
+                        <Profile src={profileImage} alt="" />
+                      </Link>
+                      { (page === name || userAdmin) &&
+                      <Link href={`/user/${name}/settings`}>
+                        <Icon><FontAwesome icon={faGear} /></Icon>
+                      </Link>
+                      }
+                      {(page === 'settings') && <Link href="/logout"><A>Salir</A></Link>}
                     </ProfileCnt>
                     </>
                   : <>

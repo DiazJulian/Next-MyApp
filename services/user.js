@@ -70,6 +70,11 @@ export const getUser = async (name) => {
   return user
 }
 
+export const RoleUser = async (user, role) => {
+  const res = await axios.put(`${URL}/user/update`, { user, role })
+  return res.data
+}
+
 export const newRed = async (user, red) => {
   const redes = await axios.post(`${URL}/user/newred`, { user, red })
   return redes

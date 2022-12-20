@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { getUsers } from '../services/user'
-import { Img, P, UL } from '../styles/Users'
-import { Input } from '../styles/Login'
+import { Img, Input, P, UL } from '../styles/Users'
 import Link from 'next/link'
 
 export default function Users ({ users }) {

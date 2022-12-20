@@ -6,31 +6,34 @@ import { getUser } from '../../../services/user'
 import { H3, Section } from '../../../styles/components/MyPosts'
 
 export default function questions ({ user }) {
-  const { name } = user.user
+  const { name, role } = user.user
   return (
     <>
-      <Navigation page={name} />
-      <Profile user={user} />
-      <Section>
-        <Link href={`/user/${name}`} >
-          <H3>Publicaciones</H3>
-        </Link>
-        <Link href={`/user/${name}/questions`} >
-          <H3>Preguntas</H3>
-        </Link>
-      </Section>
+      <Navigation page={name} role={role} />
+      <Profile user={user} role={role} />
+      { (role !== 'Disable') &&
+        <Section>
+          <Link href={`/user/${name}`} >
+            <H3>Publicaciones</H3>
+          </Link>
+          <Link href={`/user/${name}/questions`} >
+            <H3>Preguntas</H3>
+          </Link>
+        </Section>
+      }
       <Questions user={name} />
     </>
   )
 }
 
 questions.getInitialProps = async (ctx) => {
-  const name = ctx.query.name
+  const { name } = ctx.query
   let user = {}
   try {
     const res = await getUser(name)
     user = res
   } catch (error) {
+    throw new Error(error.message)
   }
 
   return { user }

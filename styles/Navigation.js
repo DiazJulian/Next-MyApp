@@ -31,12 +31,9 @@ export const Icon = styled.i`
     width: 20px;
     height: 20px;
     margin-right: 10px;
-    background: #ff00cc; 
-    background: -webkit-linear-gradient(to right, #333399, #ff00cc);
-    background: linear-gradient(to right, #333399, #ff00cc);
     cursor: pointer;
     color: #00dfff;
-    padding: 5px;
+    padding: 0 5px;
     border-radius: 50%;
 `
 
@@ -62,6 +59,13 @@ export const ProfileCnt = styled.div`
 `
 
 export const Profile = styled.img`
+    height: 40px;
+    width: 40px;
+    border-radius: 10px;
+    cursor: pointer;
+`
+
+export const DisableProfile = styled.img`
     height: 40px;
     width: 40px;
     border-radius: 10px;
